@@ -1,6 +1,5 @@
-import React from 'react';
-import type { FC } from 'react';
 import './RnDInnovation.css';
+import React, { type FC } from 'react';
 
 interface ProjectCard {
   icon: string;
