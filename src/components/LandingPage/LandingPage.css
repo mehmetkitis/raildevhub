@@ -64,13 +64,14 @@
 /* Main content styles */
 .landing-content {
   position: relative;
-  width: 100vw;
+  width: 100%;
   min-height: calc(100vh - 80px);
   color: #ffffff;
   z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
 }
 
 .content-wrapper {
