@@ -1,0 +1,267 @@
+.expertise-page {
+  background: linear-gradient(135deg, #070d24 0%, #0b1437 100%);
+  color: white;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.expertise-hero {
+  height: 50vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(45deg, rgba(7,13,36,0.9) 0%, rgba(11,20,55,0.9) 100%),
+              url('/path-to-your-hero-image.jpg') center/cover;
+}
+
+.hero-content {
+  max-width: 1000px;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+  background: linear-gradient(to right, #fff, #3B82F6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientFlow 8s ease infinite;
+}
+
+.hero-line {
+  width: 100px;
+  height: 4px;
+  background: #3B82F6;
+  margin: 2rem auto;
+  position: relative;
+}
+
+.hero-line::before,
+.hero-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 100%;
+  background: #3B82F6;
+}
+
+.hero-line::before {
+  left: -30px;
+}
+
+.hero-line::after {
+  right: -30px;
+}
+
+/* Main Content */
+.expertise-content {
+  padding: 6rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+
+.expertise-section {
+  padding: 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-icon {
+  font-size: 3.5rem;
+  display: block;
+  margin-bottom: 1rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #3B82F6;
+}
+
+.section-description {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.expertise-areas {
+  display: grid;
+  gap: 2rem;
+}
+
+.area-card {
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.area-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.area-icon {
+  font-size: 2rem;
+  color: #3B82F6;
+}
+
+.area-card h3 {
+  font-size: 1.5rem;
+  color: #3B82F6;
+}
+
+.area-card p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+/* Tech Stack Banner */
+.tech-stack-banner {
+  background: linear-gradient(90deg, #3B82F6, #2563EB);
+  padding: 4rem 2rem;
+}
+
+.banner-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.banner-content h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.tech-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.tech-category {
+  text-align: center;
+}
+
+.tech-category h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tech-category li {
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .expertise-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .expertise-section {
+    padding: 1rem;
+  }
+  
+  .tech-categories {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Modern Scroll Animation */
+@media (prefers-reduced-motion: no-preference) {
+  .area-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+  }
+  
+  .area-card:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .area-card:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

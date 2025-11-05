@@ -1,0 +1,156 @@
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #071028; /* deep navy */
+  box-shadow: 0 6px 18px rgba(2, 8, 20, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  color: #e6f2ff; /* light text for nav */
+}
+
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-right: auto; /* push nav + controls to the right */
+}
+
+.brand-name {
+  font-size: 1.6rem;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  background: linear-gradient(92deg, #e6f2ff 0%, #5aa9ff 40%, #9cc6ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 18px rgba(90,169,255,0.18);
+  transition: transform 160ms ease, text-shadow 160ms ease;
+}
+
+.brand-name:hover {
+  transform: translateY(-1px);
+  text-shadow: 0 4px 24px rgba(90,169,255,0.28);
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 0.75rem;
+  display: block;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.2));
+}
+
+.logo-container h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #0b3b6f; /* brand navy */
+  margin: 0;
+  line-height: 1;
+}
+
+.logo-container .logo {
+  /* make sure logo visually aligns with brand color; hover will add emphasis */
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  transition: transform 200ms ease, filter 200ms ease, box-shadow 200ms ease;
+}
+
+.logo-container .logo:hover {
+  transform: scale(1.08) rotate(-2deg);
+  filter: drop-shadow(0 8px 24px rgba(11,59,111,0.35));
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.75rem;
+  margin-right: 1.25rem; /* spacing between nav and controls */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgba(230, 245, 255, 0.95);
+  font-weight: 600;
+  transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.nav-links a:hover {
+  color: #bfe8ff;
+  transform: translateY(-2px);
+}
+
+.header-controls {
+  display: flex;
+  gap: 1rem;
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(90,169,255,0.35);
+  border-radius: 12px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.lang-segment {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #e6f2ff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+
+.lang-segment:hover {
+  transform: translateY(-1px);
+}
+
+.lang-segment.active {
+  background: linear-gradient(180deg, rgba(30,144,255,0.35), rgba(30,144,255,0.18));
+  box-shadow: 0 6px 18px rgba(30,144,255,0.28) inset, 0 2px 8px rgba(30,144,255,0.25);
+}
+
+.lang-segment:focus-visible {
+  box-shadow: 0 0 0 2px rgba(90,169,255,0.6), 0 0 0 4px rgba(14,69,120,0.5);
+}
+
+.theme-toggle,
+.language-toggle {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #f3f4f6;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.header.dark .theme-toggle,
+.header.dark .language-toggle {
+  background-color: #374151;
+  color: #ffffff;
+}
+
+.theme-toggle:hover,
+.language-toggle:hover {
+  background-color: #e5e7eb;
+}
+
+.header.dark .theme-toggle:hover,
+.header.dark .language-toggle:hover {
+  background-color: #4b5563;
+}

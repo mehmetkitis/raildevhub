@@ -1,0 +1,168 @@
+.culture-careers {
+  background: linear-gradient(135deg, #070d24 0%, #0b1437 100%);
+  color: white;
+  min-height: 100vh;
+}
+
+.cc-hero {
+  padding: 6rem 2rem;
+  text-align: center;
+  background: linear-gradient(90deg, rgba(11,59,111,0.85), rgba(22,64,112,0.9));
+}
+
+.cc-hero-inner h1 {
+  font-size: 2.5rem;
+  margin: 0 auto 1rem;
+  max-width: 900px;
+  background: linear-gradient(to right, #ffffff, #bfe8ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.lead {
+  color: rgba(255,255,255,0.9);
+  margin-top: 0.5rem;
+}
+
+.cc-section {
+  padding: 4rem 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cc-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.cc-section .subtitle {
+  text-align: center;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 2rem;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.value-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(59,130,246,0.12);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.value-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #3B82F6;
+}
+
+.value-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #bfe8ff;
+}
+
+.value-card p {
+  color: rgba(255,255,255,0.9);
+}
+
+.perks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.perk-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(59,130,246,0.12);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.perk-icon {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  color: #3B82F6;
+}
+
+.perk-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: #bfe8ff;
+}
+
+.perk-card p {
+  color: rgba(255,255,255,0.9);
+}
+
+.openings-list {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.opening-item {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(59,130,246,0.08);
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.opening-item .role {
+  font-weight: 600;
+}
+
+.opening-item .meta {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.95rem;
+}
+
+.cta-row {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.apply-btn {
+  background: #3B82F6;
+  color: white;
+  padding: 0.85rem 1.5rem;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.apply-btn.outline {
+  background: transparent;
+  color: #3B82F6;
+  border: 2px solid #3B82F6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cc-hero-inner h1 {
+    font-size: 1.5rem;
+  }
+  .values-grid,
+  .perks-grid {
+    grid-template-columns: 1fr;
+  }
+}

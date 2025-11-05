@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <!-- Tren rayı -->
+  <g transform="rotate(-15, 50, 50)">
+    <!-- Sol ray -->
+    <path d="M20 30 L40 70 L30 70 L10 30 Z" fill="#8B7355"/>
+    <!-- Sağ ray -->
+    <path d="M70 30 L90 70 L80 70 L60 30 Z" fill="#8B7355"/>
+    <!-- Traversler -->
+    <rect x="10" y="35" width="80" height="5" fill="#6F4E37"/>
+    <rect x="15" y="45" width="75" height="5" fill="#6F4E37"/>
+    <rect x="20" y="55" width="70" height="5" fill="#6F4E37"/>
+    <rect x="25" y="65" width="65" height="5" fill="#6F4E37"/>
+  </g>
+</svg>

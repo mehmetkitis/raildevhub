@@ -1,0 +1,241 @@
+.about-page {
+  background-color: #070d24;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #0b1437 0%, #070d24 100%);
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(45deg, rgba(7, 13, 36, 0.7) 0%, rgba(11, 20, 55, 0.7) 100%),
+    url('/path-to-your-background-image.jpg') center/cover;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #fff, #3B82F6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.hero-slogan {
+  font-size: 2rem;
+  color: #3B82F6;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtext {
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.cta-button {
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  background: linear-gradient(45deg, #3B82F6, #2563EB);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+/* Mission Banner */
+.mission-banner {
+  background: linear-gradient(90deg, #3B82F6, #2563EB);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+/* Story Section */
+.story-section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #3B82F6;
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 4rem;
+}
+
+.mission-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.mission-card {
+  background: rgba(59, 130, 246, 0.1);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mission-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Core Mission Section */
+.core-mission {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #0b1437 0%, #070d24 100%);
+  text-align: center;
+}
+
+.mission-text {
+  max-width: 900px;
+  margin: 2rem auto;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.highlight-box {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: rgba(59, 130, 246, 0.1);
+  border-left: 4px solid #3B82F6;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+/* Capabilities Section */
+.capabilities {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.capability-card {
+  background: rgba(59, 130, 246, 0.1);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.capability-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+}
+
+.capability-card .focus {
+  color: #3B82F6;
+  font-weight: 500;
+  margin: 1rem 0;
+}
+
+/* Animations */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #3B82F6, 0 0 10px #3B82F6;
+  }
+  to {
+    text-shadow: 0 0 10px #3B82F6, 0 0 20px #3B82F6;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  
+  .hero-slogan {
+    font-size: 1.5rem;
+  }
+  
+  .mission-banner {
+    font-size: 1.2rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .mission-cards,
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Modern Scroll Animation */
+@media (prefers-reduced-motion: no-preference) {
+  .mission-card,
+  .capability-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

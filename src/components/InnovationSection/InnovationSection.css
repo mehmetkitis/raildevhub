@@ -1,0 +1,232 @@
+.innovation-section {
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+  /* deep navy background to match site dark theme */
+  background: linear-gradient(180deg, #07102a 0%, #0b1437 65%);
+  border-top: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Sparkle effect */
+.innovation-section::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  animation: sparkle 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes sparkle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.innovation-section__header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.innovation-section__label {
+  background: rgba(33,150,243,0.12); /* blue tint like buttons */
+  padding: 0.45rem 0.9rem;
+  border-radius: 18px;
+  font-size: 0.9rem;
+  color: #eaf6ff;
+  display: inline-block;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(33,150,243,0.12);
+}
+
+.innovation-section__title {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ffffff 0%, #4fc3f7 40%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin-bottom: 0.75rem;
+}
+
+.innovation-section__subtitle {
+  color: rgba(165,180,252,0.9);
+  font-size: 1.05rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.innovation-section__projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 across on desktop */
+  gap: 2.25rem 1.75rem;
+  margin: 4rem 0;
+  align-items: start;
+}
+
+/* Stagger: push second row slightly down for 3-up / 3-down visual */
+.innovation-section__projects .project-card:nth-child(n + 4) {
+  transform: translateY(22px);
+}
+
+.project-card {
+  background: linear-gradient(180deg, rgba(17,25,52,0.65), rgba(11,20,55,0.55));
+  border-radius: 14px;
+  padding: 1.75rem;
+  border: 1px solid rgba(124, 91, 255, 0.08);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+  backdrop-filter: blur(6px);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(3,8,30,0.7);
+  border-color: rgba(167,139,250,0.18);
+}
+
+.project-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.project-card__icon {
+  font-size: 1.6rem;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6));
+}
+
+.project-card__status {
+  padding: 0.35rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15);
+}
+
+.project-card__title {
+  color: #ffffff;
+  font-size: 1.12rem;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+}
+
+.project-card__description {
+  color: rgba(200,210,255,0.88);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-card__tag {
+  background: linear-gradient(90deg, rgba(79,195,247,0.06), rgba(167,139,250,0.04));
+  color: #d6eeff;
+  padding: 0.25rem 0.7rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  transition: transform 0.18s ease, background 0.2s ease, opacity 0.18s ease;
+}
+
+.project-card__tag:hover {
+  transform: translateY(-2px);
+  opacity: 0.98;
+  background: linear-gradient(90deg, rgba(79,195,247,0.12), rgba(167,139,250,0.08));
+}
+
+.innovation-section__footer {
+  margin-top: 6rem;
+}
+
+.info-box {
+  background: linear-gradient(90deg, rgba(31,45,85,0.6), rgba(18,28,60,0.55));
+  border-radius: 18px;
+  padding: 2.25rem;
+  text-align: center;
+  border: 1px solid rgba(124,91,255,0.06);
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.info-box__title {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.info-box__text {
+  color: rgba(165,180,252,0.95);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .innovation-section__projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .innovation-section__projects .project-card:nth-child(n + 4) {
+    transform: translateY(12px);
+  }
+}
+
+@media (max-width: 768px) {
+  .innovation-section {
+    padding: 3rem 1rem;
+  }
+
+  .innovation-section__title {
+    font-size: 2.2rem;
+  }
+
+  .innovation-section__subtitle {
+    font-size: 1rem;
+  }
+
+  .innovation-section__projects {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .innovation-section__projects .project-card:nth-child(n + 4) {
+    transform: translateY(0);
+  }
+
+  .info-box {
+    padding: 2rem;
+  }
+
+  .info-box__title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .innovation-section__title {
+    font-size: 1.8rem;
+  }
+
+  .project-card {
+    padding: 1.25rem;
+  }
+}

@@ -1,0 +1,234 @@
+.expertise {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #070d24 0%, #0b1437 100%);
+  color: white;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.section-header .icon {
+  font-size: 3rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+/* Domain Cards */
+.domain-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+}
+
+.domain-card {
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.domain-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+}
+
+.domain-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 1rem;
+  color: #3B82F6;
+}
+
+.domain-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #3B82F6;
+}
+
+.domain-card p {
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Standards Banner */
+.standards-banner {
+  background: #3B82F6;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 1000px;
+  margin: 4rem auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.standards-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+    rgba(255,255,255,0.1) 0%, 
+    rgba(255,255,255,0) 100%
+  );
+}
+
+.standards-banner h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.standards-banner p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  padding: 6rem 0 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cta-section p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-weight: 500;
+}
+
+.cta-button.primary {
+  background: #3B82F6;
+  color: white;
+  border: none;
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: #3B82F6;
+  border: 2px solid #3B82F6;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+}
+
+.cta-button.primary:hover {
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+.cta-button.secondary:hover {
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-header h2,
+  .cta-section h2 {
+    font-size: 2rem;
+  }
+  
+  .standards-banner h3 {
+    font-size: 1.5rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+  }
+  
+  .cta-button {
+    width: 100%;
+  }
+}
+
+/* Modern Scroll Animation */
+@media (prefers-reduced-motion: no-preference) {
+  .domain-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+  }
+  
+  .domain-card:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .domain-card:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  .domain-card:nth-child(4) {
+    animation-delay: 0.6s;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

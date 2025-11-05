@@ -1,0 +1,199 @@
+.rnd-innovation {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0b1437 0%, #1a237e 100%);
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Sparkle effect */
+.rnd-innovation::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  animation: sparkle 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes sparkle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rnd-innovation__header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.rnd-innovation__label {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #fff;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.rnd-innovation__title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin-bottom: 1rem;
+}
+
+.rnd-innovation__subtitle {
+  color: #a5b4fc;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.rnd-innovation__projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 4rem 0;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.project-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.project-card__icon {
+  font-size: 1.5rem;
+}
+
+.project-card__status {
+  padding: 0.35rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.project-card__title {
+  color: #fff;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.project-card__description {
+  color: #a5b4fc;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-card__tag {
+  background: rgba(165, 180, 252, 0.1);
+  color: #a5b4fc;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.project-card__tag:hover {
+  background: rgba(165, 180, 252, 0.2);
+}
+
+.rnd-innovation__footer {
+  margin-top: 6rem;
+}
+
+.info-box {
+  background: linear-gradient(135deg, rgba(165, 180, 252, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
+  border-radius: 24px;
+  padding: 3rem;
+  text-align: center;
+  border: 1px solid rgba(165, 180, 252, 0.2);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.info-box__title {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.info-box__text {
+  color: #a5b4fc;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .rnd-innovation {
+    padding: 3rem 1rem;
+  }
+
+  .rnd-innovation__title {
+    font-size: 2.5rem;
+  }
+
+  .rnd-innovation__subtitle {
+    font-size: 1rem;
+  }
+
+  .info-box {
+    padding: 2rem;
+  }
+
+  .info-box__title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .rnd-innovation__title {
+    font-size: 2rem;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+  }
+}
