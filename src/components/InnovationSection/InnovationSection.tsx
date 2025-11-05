@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import './InnovationSection.css';
+import { useLanguage } from '../../context/LanguageContext';
 
 interface ProjectCard {
   icon: string;
@@ -10,7 +11,7 @@ interface ProjectCard {
   tags: string[];
 }
 
-const projects: ProjectCard[] = [
+const projectsEN: ProjectCard[] = [
   {
     icon: '🔬',
     status: 'Pilot',
@@ -61,14 +62,71 @@ const projects: ProjectCard[] = [
   }
 ];
 
+const projectsTR: ProjectCard[] = [
+  {
+    icon: '🔬',
+    status: 'Pilot',
+    statusColor: '#00ff88',
+    title: 'Akıllı Hat Gözcüleri',
+    description: 'Gömülü IoT sensörleri kullanarak hat boyunca sıcaklık ve mikro-yapı değişimlerini izleyen önleyici sistem.',
+    tags: ['IoT', 'Makine Öğrenimi', 'Uç Hesaplama']
+  },
+  {
+    icon: '🤖',
+    status: 'Geliştirme',
+    statusColor: '#ff6b6b',
+    title: 'Sanal Yolcu Asistanı',
+    description: 'Yolculara planlama, bilgilendirme ve gecikme tahminlerinde yardımcı olan çok dilli yapay zeka asistanı.',
+    tags: ['LLM', 'NLP', 'Sesli Yapay Zeka']
+  },
+  {
+    icon: '🔗',
+    status: 'Araştırma',
+    statusColor: '#ffd93d',
+    title: 'Blockchain Güvenlik Defteri',
+    description: 'Bakım ve güvenlik geçmişini değiştirilemez blockchain kayıtlarıyla güvence altına alan sistem.',
+    tags: ['Blockchain', 'Akıllı Sözleşmeler', 'Denetim İzi']
+  },
+  {
+    icon: '🌱',
+    status: 'Pilot',
+    statusColor: '#00ff88',
+    title: 'Yeşil Rota Motoru',
+    description: 'Enerji tüketimini azaltmak için tren rotalarını dinamik olarak optimize eden çevre dostu çözüm.',
+    tags: ['Optimizasyon', 'Sürdürülebilirlik', 'Yeşil Teknoloji']
+  },
+  {
+    icon: '👁️',
+    status: 'Geliştirme',
+    statusColor: '#ff6b6b',
+    title: 'Görsel Güvenlik Analitiği',
+    description: 'Tehlikeleri oluşmadan önce tespit etmek için rayları ve vagonları analiz eden yapay zeka destekli kameralar.',
+    tags: ['Bilgisayarlı Görü', 'Gerçek Zamanlı', 'Güvenlik']
+  },
+  {
+    icon: '🌐',
+    status: 'Araştırma',
+    statusColor: '#ffd93d',
+    title: 'Dijital İkiz Simülatörü',
+    description: 'Senaryoları test etmek ve güvenli simülasyonlar yapmak için raylı sistemlerin sanal replikalarını oluşturur.',
+    tags: ['Simülasyon', '3D Modelleme', 'Test']
+  }
+];
+
 const InnovationSection: FC = () => {
+  const { language } = useLanguage();
+  const isTR = language === 'tr';
+  const projects = isTR ? projectsTR : projectsEN;
+  
   return (
     <section className="innovation-section">
       <div className="innovation-section__header">
-        <span className="innovation-section__label">🔬 Innovation Center</span>
-        <h2 className="innovation-section__title">Coding the Future</h2>
+        <span className="innovation-section__label">🔬 {isTR ? 'İnovasyon Merkezi' : 'Innovation Center'}</span>
+        <h2 className="innovation-section__title">{isTR ? 'Geleceği Kodluyoruz' : 'Coding the Future'}</h2>
         <p className="innovation-section__subtitle">
-          We're testing tomorrow's technologies today to push the boundaries of the present.
+          {isTR 
+            ? 'Bugünün sınırlarını zorlamak için yarının teknolojilerini bugün test ediyoruz.'
+            : 'We\'re testing tomorrow\'s technologies today to push the boundaries of the present.'}
         </p>
       </div>
 
@@ -99,9 +157,11 @@ const InnovationSection: FC = () => {
 
       <div className="innovation-section__footer">
         <div className="info-box">
-          <h2 className="info-box__title">Experimentation Never Ends</h2>
+          <h2 className="info-box__title">{isTR ? 'Deneyler Asla Bitmez' : 'Experimentation Never Ends'}</h2>
           <p className="info-box__text">
-            Every day we test a new idea. Some fail, some change the future.
+            {isTR 
+              ? 'Her gün yeni bir fikir test ediyoruz. Bazıları başarısız oluyor, bazıları geleceği değiştiriyor.'
+              : 'Every day we test a new idea. Some fail, some change the future.'}
           </p>
         </div>
       </div>

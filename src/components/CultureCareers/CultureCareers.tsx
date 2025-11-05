@@ -22,26 +22,26 @@ const CultureCareers: FC = () => {
           <div className="values-grid">
             <div className="value-card">
               <div className="value-icon">💡</div>
-              <h3>Innovation</h3>
-              <p>Continuous learning and pushing boundaries to deliver breakthrough solutions.</p>
+              <h3>{isTR ? 'İnovasyon' : 'Innovation'}</h3>
+              <p>{isTR ? 'Çığır açan çözümler sunmak için sürekli öğrenme ve sınırları zorlama.' : 'Continuous learning and pushing boundaries to deliver breakthrough solutions.'}</p>
             </div>
 
             <div className="value-card">
               <div className="value-icon">🤝</div>
-              <h3>Collaboration</h3>
-              <p>Team-first approach and open communication that accelerates outcomes.</p>
+              <h3>{isTR ? 'İşbirliği' : 'Collaboration'}</h3>
+              <p>{isTR ? 'Sonuçları hızlandıran ekip öncelikli yaklaşım ve açık iletişim.' : 'Team-first approach and open communication that accelerates outcomes.'}</p>
             </div>
 
             <div className="value-card">
               <div className="value-icon">🌍</div>
-              <h3>Impact</h3>
-              <p>Work that delivers measurable benefits to rail systems and passengers alike.</p>
+              <h3>{isTR ? 'Etki' : 'Impact'}</h3>
+              <p>{isTR ? 'Raylı sistemlere ve yolculara ölçülebilir faydalar sağlayan çalışmalar.' : 'Work that delivers measurable benefits to rail systems and passengers alike.'}</p>
             </div>
 
             <div className="value-card">
               <div className="value-icon">🎓</div>
-              <h3>Growth</h3>
-              <p>We invest in people: mentorship, training budgets, and career paths.</p>
+              <h3>{isTR ? 'Gelişim' : 'Growth'}</h3>
+              <p>{isTR ? 'İnsanlara yatırım yapıyoruz: mentorluk, eğitim bütçeleri ve kariyer yolları.' : 'We invest in people: mentorship, training budgets, and career paths.'}</p>
             </div>
           </div>
         </div>
@@ -55,26 +55,26 @@ const CultureCareers: FC = () => {
           <div className="perks-grid">
             <div className="perk-card">
               <div className="perk-icon">🕒</div>
-              <h4>Flexible Work</h4>
-              <p>Hybrid and flexible schedules to support work-life balance.</p>
+              <h4>{isTR ? 'Esnek Çalışma' : 'Flexible Work'}</h4>
+              <p>{isTR ? 'İş-yaşam dengesini destekleyen hibrit ve esnek çalışma programları.' : 'Hybrid and flexible schedules to support work-life balance.'}</p>
             </div>
 
             <div className="perk-card">
               <div className="perk-icon">📚</div>
-              <h4>Learning Budgets</h4>
-              <p>Personal development and dedicated training allowance.</p>
+              <h4>{isTR ? 'Eğitim Bütçeleri' : 'Learning Budgets'}</h4>
+              <p>{isTR ? 'Kişisel gelişim ve özel eğitim ödeneği.' : 'Personal development and dedicated training allowance.'}</p>
             </div>
 
             <div className="perk-card">
               <div className="perk-icon">💚</div>
-              <h4>Health & Benefits</h4>
-              <p>Private health coverage and competitive complementary benefits.</p>
+              <h4>{isTR ? 'Sağlık ve Yan Haklar' : 'Health & Benefits'}</h4>
+              <p>{isTR ? 'Özel sağlık sigortası ve rekabetçi yan haklar.' : 'Private health coverage and competitive complementary benefits.'}</p>
             </div>
 
             <div className="perk-card">
               <div className="perk-icon">🪑</div>
-              <h4>Modern Workspace</h4>
-              <p>Ergonomic, collaborative spaces with the tools you need to succeed.</p>
+              <h4>{isTR ? 'Modern Çalışma Alanı' : 'Modern Workspace'}</h4>
+              <p>{isTR ? 'Başarı için ihtiyacınız olan araçlarla ergonomik, işbirliğine dayalı alanlar.' : 'Ergonomic, collaborative spaces with the tools you need to succeed.'}</p>
             </div>
           </div>
         </div>

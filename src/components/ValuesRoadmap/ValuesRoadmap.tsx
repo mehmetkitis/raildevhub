@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import './ValuesRoadmap.css';
+import { useLanguage } from '../../context/LanguageContext';
 
 interface CoreValue {
   icon: string;
@@ -16,7 +17,7 @@ interface RoadmapBlock {
   items: string[];
 }
 
-const coreValues: CoreValue[] = [
+const coreValuesEN: CoreValue[] = [
   {
     icon: "🛡️",
     title: "Security",
@@ -43,7 +44,34 @@ const coreValues: CoreValue[] = [
   }
 ];
 
-const roadmapBlocks: RoadmapBlock[] = [
+const coreValuesTR: CoreValue[] = [
+  {
+    icon: "🛡️",
+    title: "Güvenlik",
+    description: "Zamanın Ötesinde Koruma. Kritik altyapıyı koruyan kurumsal düzey şifreleme ve sıfır güven mimarisi.",
+    color: "#3B82F6" // blue
+  },
+  {
+    icon: "⚡",
+    title: "Performans",
+    description: "Hızın Ötesinde Zeka. Ödün vermeden düşük gecikmeyle büyük veri setlerini gerçek zamanlı yönetme gücü.",
+    color: "#F97316" // orange
+  },
+  {
+    icon: "✨",
+    title: "Modern Tasarım",
+    description: "Kullanıcı Odaklı Deneyim. Karmaşık sistemleri sezgisel, temiz arayüzlerle basitleştirerek karar vermeyi hızlandırma.",
+    color: "#EAB308" // yellow
+  },
+  {
+    icon: "✅",
+    title: "Kalite",
+    description: "Sıfır Hata Taahhüdü. Kusursuz ve güvenilir operasyonlar için üretime hazır, titizlikle test edilmiş çözümler.",
+    color: "#EF4444" // red
+  }
+];
+
+const roadmapBlocksEN: RoadmapBlock[] = [
   {
     year: 2025,
     title: "The Digital Core Year",
@@ -82,7 +110,51 @@ const roadmapBlocks: RoadmapBlock[] = [
   }
 ];
 
+const roadmapBlocksTR: RoadmapBlock[] = [
+  {
+    year: 2025,
+    title: "Dijital Çekirdek Yılı",
+    color: "#1D4ED8", // dark blue
+    goal: "Dijital dönüşüm temelleri atılıyor. Her süreç veri odaklı hale geliyor.",
+    items: [
+      "Tam platform dağıtımı",
+      "25.000+ günlük aktif kullanıcı",
+      "500+ rapor ve akıllı pano",
+      "Tamamen gerçek zamanlı veri akışı"
+    ]
+  },
+  {
+    year: 2027,
+    title: "Otonom Zeka Katmanı",
+    color: "#DC2626", // red
+    goal: "Karar verme yetkisi yapay zeka ajanlarına geçiyor. Bakım maliyetleri ve gecikmeler sıfıra yaklaşıyor.",
+    items: [
+      "%100 öngörüsel bakım",
+      "Gerçek zamanlı anomali ve siber tehdit tespiti",
+      "Kendi kendini optimize eden akıllı enerji yönetimi",
+      "Otonom operasyonel planlama"
+    ]
+  },
+  {
+    year: 2030,
+    title: "Akıllı Ray Ağı",
+    color: "#D97706", // amber
+    goal: "Her tren, ray ve istasyon akıllı ağda bir düğüm haline geliyor. Türkiye küresel standartlar belirliyor.",
+    items: [
+      "Tamamen otonom operasyon izleme",
+      "Blockchain sertifikalı güvenlik kayıtları",
+      "Karbon-nötr operasyon optimizasyonu",
+      "Yolcu Deneyimi Yapay Zekası (PX AI)"
+    ]
+  }
+];
+
 const ValuesRoadmap: FC = () => {
+  const { language } = useLanguage();
+  const isTR = language === 'tr';
+  const coreValues = isTR ? coreValuesTR : coreValuesEN;
+  const roadmapBlocks = isTR ? roadmapBlocksTR : roadmapBlocksEN;
+  
   return (
     <section className="values-roadmap">
       {/* Core Values Section */}
@@ -90,9 +162,11 @@ const ValuesRoadmap: FC = () => {
         <div className="section-header">
           <h2>
             <span className="icon">🧭</span>
-            The Principles That Propel Us
+            {isTR ? 'Bizi İleriye Taşıyan İlkeler' : 'The Principles That Propel Us'}
           </h2>
-          <p className="slogan">We're building not just a platform, but a philosophy.</p>
+          <p className="slogan">
+            {isTR ? 'Sadece bir platform değil, bir felsefe inşa ediyoruz.' : 'We\'re building not just a platform, but a philosophy.'}
+          </p>
         </div>
 
         <div className="values-grid">
@@ -115,13 +189,19 @@ const ValuesRoadmap: FC = () => {
         <div className="section-header">
           <h2>
             <span className="icon">🔭</span>
-            Our Roadmap: A Revolutionary Trajectory
+            {isTR ? 'Yol Haritamız: Devrimsel Bir Yörünge' : 'Our Roadmap: A Revolutionary Trajectory'}
           </h2>
-          <p className="slogan">Our roadmap isn't just ambitious; it's rewriting global standards.</p>
+          <p className="slogan">
+            {isTR 
+              ? 'Yol haritamız sadece iddialı değil; küresel standartları yeniden yazıyor.'
+              : 'Our roadmap isn\'t just ambitious; it\'s rewriting global standards.'}
+          </p>
         </div>
 
         <div className="goal-banner">
-          By 2030, we aim to make Turkey's railway network the smartest in the world.
+          {isTR 
+            ? '2030 yılına kadar Türkiye\'nin demiryolu ağını dünyanın en akıllısı yapmayı hedefliyoruz.'
+            : 'By 2030, we aim to make Turkey\'s railway network the smartest in the world.'}
         </div>
 
         <div className="timeline">
@@ -149,11 +229,11 @@ const ValuesRoadmap: FC = () => {
 
         {/* Vision Beyond 2030 */}
         <div className="future-vision">
-          <h3>Beyond 2030: The Dream Realized</h3>
+          <h3>{isTR ? '2030\'un Ötesi: Gerçekleşen Rüya' : 'Beyond 2030: The Dream Realized'}</h3>
           <p>
-            Imagine a railway network that knows passengers' needs before they do, where failures never 
-            materialize. A world where every journey is perfect, secure, efficient, and completely 
-            sustainable. This isn't science fiction. This is the inevitable outcome of our roadmap.
+            {isTR
+              ? 'Yolcuların ihtiyaçlarını onlar farkına varmadan bilen, arızaların hiç gerçekleşmediği bir demiryolu ağı hayal edin. Her yolculuğun mükemmel, güvenli, verimli ve tamamen sürdürülebilir olduğu bir dünya. Bu bilim kurgu değil. Bu, yol haritamızın kaçınılmaz sonucu.'
+              : 'Imagine a railway network that knows passengers\' needs before they do, where failures never materialize. A world where every journey is perfect, secure, efficient, and completely sustainable. This isn\'t science fiction. This is the inevitable outcome of our roadmap.'}
           </p>
         </div>
       </div>

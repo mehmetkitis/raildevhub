@@ -1,7 +1,11 @@
 import './CoreValues.css';
+import { useLanguage } from '../../context/LanguageContext';
 
 const CoreValues = () => {
-  const values = [
+  const { language } = useLanguage();
+  const isTR = language === 'tr';
+
+  const valuesEN = [
     {
       icon: (
         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,12 +72,37 @@ const CoreValues = () => {
     }
   ];
 
+  const valuesTR = [
+    {
+      icon: valuesEN[0].icon,
+      title: "Güvenlik Öncelikli",
+      description: "Kritik veri ve altyapıyı koruyan gelişmiş güvenlik önlemleri."
+    },
+    {
+      icon: valuesEN[1].icon,
+      title: "Yüksek Performans",
+      description: "Gerçek zamanlı, büyük ölçekli sistemleri yönetmek için optimize edilmiş çözümler."
+    },
+    {
+      icon: valuesEN[2].icon,
+      title: "Modern Tasarım",
+      description: "Çağdaş tasarım ilkeleriyle sezgisel, kullanıcı dostu arayüzler."
+    },
+    {
+      icon: valuesEN[3].icon,
+      title: "Kaliteli Ürünler",
+      description: "Titiz test ve en iyi uygulamalarla üretime hazır çözümler."
+    }
+  ];
+
+  const values = isTR ? valuesTR : valuesEN;
+
   return (
     <section className="core-values">
       <div className="core-values-container">
-        <h2 className="section-title">Core Values</h2>
+        <h2 className="section-title">{isTR ? 'Temel Değerler' : 'Core Values'}</h2>
         <p className="section-subtitle">
-          Principles we embrace to achieve excellence.
+          {isTR ? 'Mükemmelliğe ulaşmak için benimsediğimiz ilkeler.' : 'Principles we embrace to achieve excellence.'}
         </p>
         
         <div className="values-grid">
